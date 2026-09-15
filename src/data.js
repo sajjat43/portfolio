@@ -1,8 +1,46 @@
+export const profileImage = "/sajjat-hossain.png";
+
 export const navLinks = [
-  { href: "#work", label: "Work" },
+  { href: "#home", label: "Home" },
   { href: "#about", label: "About" },
+  { href: "#services", label: "Services" },
+  { href: "#work", label: "Portfolio" },
   { href: "#skills", label: "Skills" },
   { href: "#contact", label: "Contact" },
+];
+
+export const stats = [
+  { value: "5+", label: "Years Experience" },
+  { value: "5+", label: "Major Projects" },
+  { value: "2", label: "Companies" },
+  { value: "10+", label: "Technologies" },
+];
+
+export const services = [
+  {
+    title: "Full-Stack SaaS",
+    description:
+      "End-to-end SaaS products with scalable APIs, auth, billing workflows, and multi-tenant architecture.",
+    icon: "saas",
+  },
+  {
+    title: "Cross-Platform Apps",
+    description:
+      "React Native and web apps that share business logic and deliver reliable mobile + desktop experiences.",
+    icon: "mobile",
+  },
+  {
+    title: "Business Automation",
+    description:
+      "Recruitment, outreach, and operations platforms that remove repetitive work and speed up teams.",
+    icon: "automation",
+  },
+  {
+    title: "AI Agents & LLMs",
+    description:
+      "Conversational agents for Email and WhatsApp — intelligent routing, replies, and workflow automation.",
+    icon: "ai",
+  },
 ];
 
 export const projects = [
@@ -20,19 +58,8 @@ export const projects = [
       "Implemented fleet, driver, dispatch, compliance, contract & billing features",
       "Worked on real-time communication and map-based functionality",
     ],
-    tags: [
-      "React Native",
-      "React",
-      "Node.js",
-      "NestJS",
-      "PostgreSQL",
-      "Prisma",
-      "Redis",
-      "Socket.IO",
-    ],
-    panel: "fleet",
-    panelLabel: "Fleet · Real-time",
-    panelType: "mock",
+    tags: ["React Native", "React", "NestJS", "PostgreSQL", "Redis", "Socket.IO"],
+    tone: "fleet",
   },
   {
     index: "02",
@@ -48,9 +75,7 @@ export const projects = [
       "Improved usability and automation workflow interfaces",
     ],
     tags: ["React", "TypeScript"],
-    panel: "sendout",
-    panelLabel: "LinkedIn · Automation",
-    panelType: "mock",
+    tone: "sendout",
   },
   {
     index: "03",
@@ -66,9 +91,7 @@ export const projects = [
       "Developed database-driven business features and APIs",
     ],
     tags: ["Laravel", "Vue.js", "PHP", "MySQL"],
-    panel: "recruit",
-    panelLabel: "Recruitment · Workflows",
-    panelType: "mock",
+    tone: "recruit",
   },
   {
     index: "04",
@@ -84,9 +107,7 @@ export const projects = [
       "Developed database-driven application functionality",
     ],
     tags: ["Laravel", "Vue.js", "PHP", "MySQL"],
-    panel: "resume",
-    panelLabel: "Jobs · Resumes",
-    panelType: "mock",
+    tone: "resume",
   },
   {
     index: "05",
@@ -102,24 +123,23 @@ export const projects = [
       "Worked on intelligent message processing and response generation",
     ],
     tags: ["Python", "TypeScript", "LLMs", "AI Agents"],
-    panel: "agent",
-    panelLabel: "Email · WhatsApp · AI",
-    panelType: "agent",
+    tone: "agent",
   },
+];
+
+export const skillBars = [
+  { name: "React / React Native", level: 92 },
+  { name: "TypeScript / JavaScript", level: 90 },
+  { name: "Laravel / PHP", level: 88 },
+  { name: "Node.js / NestJS", level: 86 },
+  { name: "PostgreSQL / MySQL", level: 85 },
+  { name: "AI Agents / LLMs / Python", level: 82 },
 ];
 
 export const skillGroups = [
   {
     title: "Frontend",
-    items: [
-      "React",
-      "React Native",
-      "Vue.js",
-      "JavaScript",
-      "TypeScript",
-      "HTML",
-      "CSS",
-    ],
+    items: ["React", "React Native", "Vue.js", "JavaScript", "TypeScript", "HTML", "CSS"],
   },
   {
     title: "Backend",
@@ -139,14 +159,17 @@ export const skillGroups = [
   },
   {
     title: "Architecture",
-    items: [
-      "SaaS",
-      "REST APIs",
-      "RBAC",
-      "Multi-Tenant Systems",
-      "Real-Time Applications",
-    ],
+    items: ["SaaS", "REST APIs", "RBAC", "Multi-Tenant Systems", "Real-Time Applications"],
   },
+];
+
+export const personalInfo = [
+  { label: "Name", value: "Sajjat Hossain" },
+  { label: "Role", value: "Senior Software Engineer" },
+  { label: "Current", value: "Astitva · TruckAll" },
+  { label: "Location", value: "Dhaka, Bangladesh" },
+  { label: "Email", value: "mdsajjat43@gmail.com", href: "mailto:mdsajjat43@gmail.com" },
+  { label: "Phone", value: "+8801879994964", href: "tel:+8801879994964" },
 ];
 
 export const contact = {

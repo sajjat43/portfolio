@@ -1,31 +1,26 @@
-import { contact } from "../data";
+import { contact, stats } from "../data";
+import Reveal from "./Reveal";
 import { IconDownload, IconMessage, IconWork } from "./Icons";
 
 export default function Hero() {
   return (
-    <section className="hero">
-      <div className="hero-visual" aria-hidden="true">
-        <div className="hero-plane" />
-        <div className="hero-orb hero-orb--a" />
-        <div className="hero-orb hero-orb--b" />
-        <div className="hero-grid" />
-        <div className="hero-route" />
-      </div>
-
-      <div className="hero-copy">
-        <p className="hero-brand reveal">Sajjat Hossain</p>
-        <p className="hero-role reveal delay-1">Senior Software Engineer</p>
-        <h1 className="hero-title reveal delay-1">
-          Scalable SaaS, automation, and AI-powered products.
-        </h1>
+    <section id="home" className="section hero">
+      <div className="hero-banner">
+        <p className="eyebrow reveal">Welcome</p>
+        <h2 className="hero-heading reveal">
+          Hello, I’m <span>Sajjat Hossain</span>
+        </h2>
+        <p className="hero-sub reveal delay-1">
+          Senior Software Engineer — Full-Stack SaaS · React · Laravel · TypeScript · AI
+        </p>
         <p className="hero-lead reveal delay-2">
-          Full-Stack Development · SaaS · React · Laravel · TypeScript · AI — building
-          business platforms, cross-platform apps, and intelligent workflows.
+          I build scalable SaaS products, business automation platforms, cross-platform
+          applications, and AI-powered solutions used in real operations.
         </p>
         <div className="hero-actions reveal delay-3">
           <a className="btn btn-primary btn-icon" href="#work">
             <IconWork />
-            <span>See selected work</span>
+            <span>My Portfolio</span>
           </a>
           <a
             className="btn btn-ghost btn-icon"
@@ -39,9 +34,18 @@ export default function Hero() {
           </a>
           <a className="btn btn-ghost btn-icon" href="#contact">
             <IconMessage />
-            <span>Get in touch</span>
+            <span>Hire Me</span>
           </a>
         </div>
+      </div>
+
+      <div className="stats-row">
+        {stats.map((stat) => (
+          <Reveal key={stat.label} className="stat-card">
+            <strong>{stat.value}</strong>
+            <span>{stat.label}</span>
+          </Reveal>
+        ))}
       </div>
     </section>
   );

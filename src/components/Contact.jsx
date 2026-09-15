@@ -10,54 +10,26 @@ import {
 } from "./Icons";
 
 const links = [
-  {
-    href: `mailto:${contact.email}`,
-    label: contact.email,
-    icon: IconMail,
-    primary: true,
-  },
-  {
-    href: contact.phoneHref,
-    label: contact.phone,
-    icon: IconPhone,
-  },
-  {
-    href: contact.whatsapp,
-    label: "WhatsApp",
-    icon: IconWhatsApp,
-    external: true,
-  },
-  {
-    href: contact.cv,
-    label: "Download CV",
-    icon: IconDownload,
-    external: true,
-    download: true,
-  },
-  {
-    href: contact.github,
-    label: "GitHub",
-    icon: IconGithub,
-    external: true,
-  },
-  {
-    href: contact.linkedin,
-    label: "LinkedIn",
-    icon: IconLinkedIn,
-    external: true,
-  },
+  { href: `mailto:${contact.email}`, label: contact.email, icon: IconMail, primary: true },
+  { href: contact.phoneHref, label: contact.phone, icon: IconPhone },
+  { href: contact.whatsapp, label: "WhatsApp", icon: IconWhatsApp, external: true },
+  { href: contact.cv, label: "Download CV", icon: IconDownload, external: true, download: true },
+  { href: contact.github, label: "GitHub", icon: IconGithub, external: true },
+  { href: contact.linkedin, label: "LinkedIn", icon: IconLinkedIn, external: true },
 ];
 
 export default function Contact() {
   return (
     <section id="contact" className="section contact">
-      <Reveal className="contact-panel">
+      <div className="section-head">
         <p className="eyebrow">Contact</p>
-        <h2>Let’s build the next thing.</h2>
-        <p>
-          Open to senior full-stack, SaaS, and AI engineering roles — or collaborations on
-          automation and cross-platform products.
+        <h2>Get In Touch</h2>
+        <p className="section-lead">
+          Open to senior full-stack, SaaS, and AI engineering roles — or product collaborations.
         </p>
+      </div>
+
+      <Reveal className="contact-panel">
         <div className="contact-actions">
           {links.map((link) => {
             const Icon = link.icon;

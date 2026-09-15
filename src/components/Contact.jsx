@@ -21,34 +21,36 @@ const links = [
 export default function Contact() {
   return (
     <section id="contact" className="section contact">
-      <div className="section-head">
-        <p className="eyebrow">Contact</p>
-        <h2>Get In Touch</h2>
-        <p className="section-lead">
-          Open to senior full-stack, SaaS, and AI engineering roles — or product collaborations.
-        </p>
-      </div>
-
-      <Reveal className="contact-panel">
-        <div className="contact-actions">
-          {links.map((link) => {
-            const Icon = link.icon;
-            return (
-              <a
-                key={link.label}
-                className={`btn btn-icon ${link.primary ? "btn-primary" : "btn-ghost"}`}
-                href={link.href}
-                target={link.external ? "_blank" : undefined}
-                rel={link.external ? "noopener noreferrer" : undefined}
-                download={link.download || undefined}
-              >
-                <Icon />
-                <span>{link.label}</span>
-              </a>
-            );
-          })}
+      <div className="container">
+        <div className="section-head center">
+          <p className="eyebrow">Contact</p>
+          <h2>Let’s work together</h2>
+          <p className="section-lead">
+            Open to senior full-stack, SaaS, and AI engineering roles — or product collaborations.
+          </p>
         </div>
-      </Reveal>
+
+        <Reveal className="contact-panel">
+          <div className="contact-actions">
+            {links.map((link) => {
+              const Icon = link.icon;
+              return (
+                <a
+                  key={link.label}
+                  className={`btn btn-icon ${link.primary ? "btn-primary" : "btn-ghost"}`}
+                  href={link.href}
+                  target={link.external ? "_blank" : undefined}
+                  rel={link.external ? "noopener noreferrer" : undefined}
+                  download={link.download || undefined}
+                >
+                  <Icon />
+                  <span>{link.label}</span>
+                </a>
+              );
+            })}
+          </div>
+        </Reveal>
+      </div>
     </section>
   );
 }

@@ -1,3 +1,4 @@
+import BackgroundFX from "./components/BackgroundFX";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -9,7 +10,8 @@ import Footer from "./components/Footer";
 
 export default function App() {
   return (
-    <>
+    <div className="app">
+      <BackgroundFX />
       <Header />
       <main>
         <Hero />
@@ -20,6 +22,6 @@ export default function App() {
         <Contact />
       </main>
       <Footer />
-    </>
+    </div>
   );
 }

@@ -1,5 +1,44 @@
+import { useEffect, useRef, useState } from "react";
 import { skillBars, skillGroups } from "../data";
 import Reveal from "./Reveal";
+
+function SkillBar({ skill }) {
+  const ref = useRef(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const node = ref.current;
+    if (!node) return undefined;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.35 }
+    );
+
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div ref={ref} className="skill-bar">
+      <div className="skill-bar-top">
+        <span>{skill.name}</span>
+        <strong>{skill.level}%</strong>
+      </div>
+      <div className="skill-track">
+        <span
+          className="skill-fill"
+          style={{ width: visible ? `${skill.level}%` : "0%" }}
+        />
+      </div>
+    </div>
+  );
+}
 
 export default function Skills() {
   return (
@@ -13,15 +52,7 @@ export default function Skills() {
         <div className="skills-layout">
           <div className="skill-bars">
             {skillBars.map((skill) => (
-              <Reveal key={skill.name} className="skill-bar">
-                <div className="skill-bar-top">
-                  <span>{skill.name}</span>
-                  <strong>{skill.level}%</strong>
-                </div>
-                <div className="skill-track">
-                  <span className="skill-fill" style={{ width: `${skill.level}%` }} />
-                </div>
-              </Reveal>
+              <SkillBar key={skill.name} skill={skill} />
             ))}
           </div>
 

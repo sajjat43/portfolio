@@ -1,93 +1,65 @@
-import { contact } from "../data";
+import { contact, personalInfo, profileImage } from "../data";
 import Reveal from "./Reveal";
-import {
-  IconDownload,
-  IconMail,
-  IconPhone,
-  IconWhatsApp,
-} from "./Icons";
+import { IconDownload, IconWhatsApp } from "./Icons";
 
 export default function About() {
   return (
     <section id="about" className="section about">
-      <div className="about-grid">
-        <div className="about-copy">
+      <div className="container">
+        <div className="section-head">
           <p className="eyebrow">About</p>
-          <h2>Senior Software Engineer specializing in SaaS &amp; AI.</h2>
-          <p>
-            I’m Sajjat Hossain. I build scalable SaaS products, business automation platforms,
-            cross-platform applications, and AI-powered solutions — from fleet operations at
-            Astitva to recruitment automation and conversational agents at Prospect Engine LLC.
-          </p>
-          <p>
-            My focus spans full-stack SaaS, React &amp; React Native, Laravel &amp; PHP,
-            TypeScript &amp; Node.js, business automation, AI agents &amp; LLM applications, and
-            cross-platform product development.
-          </p>
+          <h2>Engineer first. Product minded.</h2>
         </div>
-        <Reveal as="aside" className="about-aside">
-          <dl>
-            <div>
-              <dt>Role</dt>
-              <dd>Senior Software Engineer</dd>
+
+        <div className="about-layout">
+          <Reveal className="about-photo-wrap">
+            <img src={profileImage} alt="Sajjat Hossain" className="about-photo" />
+          </Reveal>
+
+          <div className="about-copy">
+            <p>
+              I’m Sajjat Hossain, a Senior Software Engineer who builds scalable SaaS products,
+              automation platforms, and AI-powered systems. I care about clean architecture,
+              reliable delivery, and interfaces people can actually use under pressure.
+            </p>
+            <p>
+              At Astitva I work on TruckAll — fleet, dispatch, compliance, and real-time ops.
+              At Prospect Engine LLC I shipped LinkedIn automation, recruitment workflows, and
+              Email/WhatsApp AI agents.
+            </p>
+
+            <ul className="info-list">
+              {personalInfo.map((item) => (
+                <li key={item.label}>
+                  <span>{item.label}</span>
+                  {item.href ? <a href={item.href}>{item.value}</a> : <strong>{item.value}</strong>}
+                </li>
+              ))}
+            </ul>
+
+            <div className="about-actions">
+              <a
+                className="btn btn-primary btn-icon"
+                href={contact.cv}
+                target="_blank"
+                rel="noopener noreferrer"
+                download
+              >
+                <IconDownload />
+                <span>Download CV</span>
+              </a>
+              <a
+                className="btn btn-ghost btn-icon"
+                href={contact.whatsapp}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <IconWhatsApp />
+                <span>WhatsApp</span>
+              </a>
             </div>
-            <div>
-              <dt>Current</dt>
-              <dd>Astitva · TruckAll</dd>
-            </div>
-            <div>
-              <dt>Previous</dt>
-              <dd>Prospect Engine LLC</dd>
-            </div>
-            <div>
-              <dt>Email</dt>
-              <dd>
-                <a className="inline-icon-link" href={`mailto:${contact.email}`}>
-                  <IconMail />
-                  <span>{contact.email}</span>
-                </a>
-              </dd>
-            </div>
-            <div>
-              <dt>Phone</dt>
-              <dd>
-                <a className="inline-icon-link" href={contact.phoneHref}>
-                  <IconPhone />
-                  <span>{contact.phone}</span>
-                </a>
-              </dd>
-            </div>
-            <div>
-              <dt>WhatsApp</dt>
-              <dd>
-                <a
-                  className="inline-icon-link"
-                  href={contact.whatsapp}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <IconWhatsApp />
-                  <span>{contact.phone}</span>
-                </a>
-              </dd>
-            </div>
-            <div>
-              <dt>CV</dt>
-              <dd>
-                <a
-                  className="inline-icon-link"
-                  href={contact.cv}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  download
-                >
-                  <IconDownload />
-                  <span>Download PDF</span>
-                </a>
-              </dd>
-            </div>
-          </dl>
-        </Reveal>
+          </div>
+        </div>
       </div>
     </section>
   );

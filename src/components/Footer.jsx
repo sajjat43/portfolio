@@ -3,8 +3,10 @@ export default function Footer() {
 
   return (
     <footer className="site-footer">
-      <p>© {year} Sajjat Hossain. Built with care.</p>
-      <a href="#top">Back to top</a>
+      <div className="container footer-inner">
+        <p>© {year} Sajjat Hossain. All rights reserved.</p>
+        <a href="#home">Back to top</a>
+      </div>
     </footer>
   );
 }

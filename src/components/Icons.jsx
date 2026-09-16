@@ -94,3 +94,41 @@ export function IconMessage({ className }) {
     </svg>
   );
 }
+
+const big = 28;
+
+export function IconSaas({ className }) {
+  return (
+    <svg className={className} width={big} height={big} viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M4 7.5A2.5 2.5 0 0 1 6.5 5h11A2.5 2.5 0 0 1 20 7.5v9A2.5 2.5 0 0 1 17.5 19h-11A2.5 2.5 0 0 1 4 16.5v-9Z" stroke="currentColor" strokeWidth="1.75" />
+      <path d="M8 9.5h8M8 12.5h5" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+export function IconMobile({ className }) {
+  return (
+    <svg className={className} width={big} height={big} viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <rect x="7" y="3.5" width="10" height="17" rx="2" stroke="currentColor" strokeWidth="1.75" />
+      <path d="M10 17.5h4" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+export function IconAutomation({ className }) {
+  return (
+    <svg className={className} width={big} height={big} viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M12 4v3M12 17v3M4 12h3M17 12h3M6.5 6.5l2.1 2.1M15.4 15.4l2.1 2.1M17.5 6.5l-2.1 2.1M8.6 15.4l-2.1 2.1" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" />
+      <circle cx="12" cy="12" r="3.2" stroke="currentColor" strokeWidth="1.75" />
+    </svg>
+  );
+}
+
+export function IconAi({ className }) {
+  return (
+    <svg className={className} width={big} height={big} viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M8 8.5h8v7H8v-7Z" stroke="currentColor" strokeWidth="1.75" />
+      <path d="M10 5.5v3M14 5.5v3M10 15.5v3M14 15.5v3M5.5 10h3M5.5 14h3M15.5 10h3M15.5 14h3" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" />
+    </svg>
+  );
+}

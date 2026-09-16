@@ -22,15 +22,13 @@ export default function Contact() {
   return (
     <section id="contact" className="section contact">
       <div className="container">
-        <div className="section-head center">
-          <p className="eyebrow">Contact</p>
-          <h2>Let’s work together</h2>
-          <p className="section-lead">
-            Open to senior full-stack, SaaS, and AI engineering roles — or product collaborations.
-          </p>
-        </div>
-
         <Reveal className="contact-panel">
+          <p className="eyebrow">Contact</p>
+          <h2>Let’s talk about the next build.</h2>
+          <p className="section-lead">
+            Open to senior full-stack, SaaS, and AI engineering roles — or collaborations where
+            ownership and shipping speed matter.
+          </p>
           <div className="contact-actions">
             {links.map((link) => {
               const Icon = link.icon;

@@ -13,21 +13,24 @@ export default function Services() {
   return (
     <section id="services" className="section services">
       <div className="container">
-        <div className="section-head center">
-          <p className="eyebrow">Services</p>
-          <h2>What I offer</h2>
+        <div className="section-head">
+          <p className="eyebrow">Capabilities</p>
+          <h2>Where I create the most leverage</h2>
           <p className="section-lead">
-            Website, app, and platform engineering for SaaS, mobile, automation, and AI.
+            Not generic services — the product surfaces I repeatedly own and ship.
           </p>
         </div>
 
         <div className="services-grid">
-          {services.map((service) => {
+          {services.map((service, index) => {
             const Icon = icons[service.icon];
             return (
               <Reveal key={service.title} className="service-card">
-                <div className="service-icon">
-                  <Icon />
+                <div className="service-top">
+                  <div className="service-icon">
+                    <Icon />
+                  </div>
+                  <span className="service-num">0{index + 1}</span>
                 </div>
                 <h3>{service.title}</h3>
                 <p>{service.description}</p>

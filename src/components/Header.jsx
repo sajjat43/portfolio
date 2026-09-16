@@ -5,9 +5,27 @@ import { IconDownload } from "./Icons";
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [active, setActive] = useState("#home");
+  const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 10);
+    const sectionIds = navLinks.map((link) => link.href.slice(1));
+
+    const onScroll = () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      setScrolled(scrollTop > 10);
+      setProgress(docHeight > 0 ? (scrollTop / docHeight) * 100 : 0);
+
+      let current = "#home";
+      for (const id of sectionIds) {
+        const el = document.getElementById(id);
+        if (!el) continue;
+        if (el.getBoundingClientRect().top <= 120) current = `#${id}`;
+      }
+      setActive(current);
+    };
+
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -19,7 +37,7 @@ export default function Header() {
     <header className={`site-header${scrolled ? " is-scrolled" : ""}`}>
       <div className="container header-inner">
         <a className="logo" href="#home" onClick={close}>
-          Sajjat<span>.</span>
+          Sajjat Hossain
         </a>
 
         <button
@@ -36,7 +54,12 @@ export default function Header() {
 
         <nav className={`site-nav${open ? " is-open" : ""}`} aria-label="Primary">
           {navLinks.map((link) => (
-            <a key={link.href} href={link.href} onClick={close}>
+            <a
+              key={link.href}
+              href={link.href}
+              className={active === link.href ? "is-active" : undefined}
+              onClick={close}
+            >
               {link.label}
             </a>
           ))}
@@ -53,6 +76,7 @@ export default function Header() {
           </a>
         </nav>
       </div>
+      <div className="scroll-progress" style={{ width: `${progress}%` }} aria-hidden="true" />
     </header>
   );
 }

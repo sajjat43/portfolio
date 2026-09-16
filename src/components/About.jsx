@@ -8,10 +8,7 @@ export default function About() {
       <div className="container">
         <div className="section-head">
           <p className="eyebrow">About</p>
-          <h2>Who I am</h2>
-          <p className="section-lead">
-            A senior engineer focused on SaaS products, automation systems, and AI solutions.
-          </p>
+          <h2>Engineer first. Product minded.</h2>
         </div>
 
         <div className="about-layout">
@@ -20,11 +17,15 @@ export default function About() {
           </Reveal>
 
           <div className="about-copy">
-            <h3>Senior Software Engineer specializing in SaaS &amp; AI</h3>
             <p>
-              I’m Sajjat Hossain. I build scalable SaaS products, automation platforms, and
-              AI-powered solutions — from TruckAll at Astitva to recruitment systems and
-              conversational agents at Prospect Engine LLC.
+              I’m Sajjat Hossain, a Senior Software Engineer who builds scalable SaaS products,
+              automation platforms, and AI-powered systems. I care about clean architecture,
+              reliable delivery, and interfaces people can actually use under pressure.
+            </p>
+            <p>
+              At Astitva I work on TruckAll — fleet, dispatch, compliance, and real-time ops.
+              At Prospect Engine LLC I shipped LinkedIn automation, recruitment workflows, and
+              Email/WhatsApp AI agents.
             </p>
 
             <ul className="info-list">

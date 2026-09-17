@@ -73,7 +73,7 @@ export default function Hero() {
           {stats.map((stat) => (
             <Reveal key={stat.label} className="stat-card">
               <strong>{stat.value}</strong>
-              <span>{stat.label}</span>
+              <span>{stat.label} </span>
             </Reveal>
           ))}
         </div>

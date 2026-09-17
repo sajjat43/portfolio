@@ -10,7 +10,7 @@ export const navLinks = [
 ];
 
 export const stats = [
-  { value: "5+", label: "Years Experience" },
+  { value: "4+", label: "Years Experience" },
   { value: "5+", label: "Major Projects" },
   { value: "2", label: "Companies" },
   { value: "10+", label: "Technologies" },
